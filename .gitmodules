@@ -1,0 +1,6 @@
+[submodule "deploy"]
+	path = deploy
+	url = git@github.com:Ma-Nu-El/deploy.git
+[submodule "uni"]
+	path = uni
+	url = git@github.com:Ma-Nu-El/uni.git
