@@ -1,0 +1,2 @@
+Use rsync for non-changing files like, for instance, downloaded images
+- And back up those screenshots in ~/Pictures!
