@@ -1,4 +1,0 @@
-Use rsync for non-changing files like, for instance, downloaded images
-- And back up those screenshots in ~/Pictures!
-
-git: Delete data about deleted files? I still will use data of current files, it's the deleted ones that I don't need to track any more nor keep data about.
