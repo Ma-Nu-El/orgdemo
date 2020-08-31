@@ -1,0 +1,10 @@
+* prueba lab2
+
+global
+- todo lo del semestre
+- herencia
+- PMV & DAO
+- hoy, prox y subsiguiente
+- preguntas sobre workflow
+Nexo entre controlador, vistas, bases de datos, etc.
+
