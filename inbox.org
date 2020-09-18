@@ -35,3 +35,6 @@ https://www.reddit.com/r/archlinux/comments/is40uo/pacwall_has_been_rewritten_in
 https://github.com/pop-os/shell
 
 Display images in terminal?
+- ranger vs mc?
+
+~.<dotfile> vs ~/.config/yourDotfile?
