@@ -38,3 +38,4 @@ Display images in terminal?
 - ranger vs mc?
 
 ~.<dotfile> vs ~/.config/yourDotfile?
+- https://stackoverflow.com/questions/1024114/location-of-ini-config-files-in-linux-unix
