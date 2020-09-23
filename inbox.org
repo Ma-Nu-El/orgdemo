@@ -41,3 +41,5 @@ diff
 sdiff
 vim-diff
 git-diff
+
+http://mkweb.bcgsc.ca/carpalx/?about
