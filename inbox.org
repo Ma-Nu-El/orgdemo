@@ -1,12 +1,9 @@
-https://javarevisited.blogspot.com/2019/01/10-web-development-frameworks-fullstack-developer-should-learn.html
-
 Execute Emacs commands from Bash directly?
 In other words, non interactively.
 
 Laser: end of october.
 
 https://webspace.science.uu.nl/~gadda001/goodtheorist/index.html
-
 https://www.reddit.com/r/AskReddit/comments/33oorw/does_an_interactive_map_of_human_knowledge_exist/
 - http://wiki.polyfra.me/#
 https://www.reddit.com/r/TrueAskReddit/comments/5qllde/how_can_i_learn_physics_from_scratch/
@@ -34,8 +31,13 @@ https://www.reddit.com/r/archlinux/comments/is40uo/pacwall_has_been_rewritten_in
 - https://github.com/Kharacternyk/pacwall
 https://github.com/pop-os/shell
 
-Display images in terminal?
-- ranger vs mc?
-
 ~.<dotfile> vs ~/.config/yourDotfile?
 - https://stackoverflow.com/questions/1024114/location-of-ini-config-files-in-linux-unix
+
+merge files?:
+fileA fileB > fileC
+
+diff
+sdiff
+vim-diff
+git-diff
