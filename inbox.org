@@ -43,3 +43,14 @@ vim-diff
 git-diff
 
 http://mkweb.bcgsc.ca/carpalx/?about
+
+fzf & fasd
+
+https://ergodox-ez.com/pages/planck
+
+Git commit message good practices
+
+Zoom Ilimitado
+https://www.reuna.cl/
+
+%s/old/new/gc recursively within a directory?
