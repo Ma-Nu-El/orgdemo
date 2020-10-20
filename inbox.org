@@ -1,1 +1,6 @@
+* healthy working environment
 
+- Focus on improving yourself, before improving everything else.
+
+* CS, soft dev
+leetcode
