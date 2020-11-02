@@ -4,3 +4,6 @@
 [submodule "uni"]
 	path = uni
 	url = git@github.com:Ma-Nu-El/uni.git
+[submodule "orgmode.org"]
+	path = orgmode.org
+	url = git@github.com:Ma-Nu-El/orgmode.org.git
