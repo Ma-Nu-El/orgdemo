@@ -121,7 +121,7 @@ tree .git
 Because file systems get angry with you when you stash too many files in the same
 directory, git shards the directory based on the first two bytes of the hash.
 
-* TODO [#A] Can we just look at the object?
+* TODO Can we just look at the object?
 ** NOTE:
    Every SRC block works up to this point. I think the problem is the expression itself; I read something about a EOF placed wrongly with a quick search. Look up into it.
 
