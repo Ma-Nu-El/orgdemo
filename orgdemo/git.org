@@ -1,5 +1,4 @@
 #+TITLE: Git From the Ground Up
-#+SETUPFILE: ~/Downloads/org-html-themes/setup/theme-readtheorg.setup
 #+PROPERTY: header-args :exports both :results output :dir ~/Downloads
 #+INCLUDE: code.inc
 #+CALL: init()
