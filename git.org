@@ -1,5 +1,6 @@
 #+TITLE: Git From the Ground Up
-#+PROPERTY: header-args :exports both :results output :dir ~/Downloads
+#+SETUPFILE: setup.config
+#+PROPERTY: header-args :dir ~/org/tmp
 #+INCLUDE: code.inc
 #+CALL: init()
 
@@ -9,22 +10,18 @@ We're going to learn a little something about the git data model by crafting the
 
 * Where are we, and is git happy?
 Let's start by seeing where we are, and if we're in a valid git repository.
-echo "My current working dir is: $(dirs +0)"
-git status 2>&1 || echo Git is not happy.
 
 #+BEGIN_SRC shell
-ls -l
+echo "My current working dir is: $(dirs +0)"
+git status 2>&1 || echo Git is not happy.
 #+END_SRC
 
 #+RESULTS:
-: total 24
-: drwxrwxr-x 2 ma ma 4096 Oct 18 14:05 linuxDistros
-: drwxrwxr-x 3 ma ma 4096 Aug 20 21:44 music
-: drwxrwxr-x 2 ma ma 4096 Nov  1 22:04 orgdemo
-: drwxrwxr-x 5 ma ma 4096 Nov  1 13:39 org-html-themes
-: drwxrwxr-x 3 ma ma 4096 Sep 18 21:27 sxiv
-: drwxrwxr-x 3 ma ma 4096 Oct  2 00:37 uni
-
+#+begin_example
+My current working dir is: ~/org/tmp
+fatal: not a git repository (or any of the parent directories): .git
+Git is not happy.
+#+end_example
 
 * Let's create a .git directory
 OK, so we know that we need a =.git= directory to start things off. Let's create
@@ -36,8 +33,10 @@ git status 2>&1 || echo Git is not happy.
 #+END_SRC
 
 #+RESULTS:
-: fatal: not a git repository (or any of the parent directories): .git
-: Git is not happy.
+#+begin_example
+fatal: not a git repository (or any of the parent directories): .git
+Git is not happy.
+#+end_example
 
 Still not happy, clearly we've got some work to do.
 
@@ -54,15 +53,15 @@ tree .git/
 #+END_SRC
 
 #+RESULTS:
-: .git/
-: ├── HEAD
-: ├── objects
-: │   └── 74
-: │       └── 35a4d4bbd4c88971f2b1929491abd8ca9da3bb
-: └── refs
-:     └── heads
-:
-: 4 directories, 2 files
+#+begin_example
+.git/
+├── HEAD
+├── objects
+└── refs
+    └── heads
+
+3 directories, 1 file
+#+end_example
 
 This is essentially the skeleton we need for git, just three directories and
 one file. At this point git should be totally happy, let's verify.
@@ -72,11 +71,13 @@ git status 2>&1 || echo Git is not happy.
 #+END_SRC
 
 #+RESULTS:
-: On branch master
-:
-: No commits yet
-:
-: nothing to commit (create/copy files and use "git add" to track)
+#+begin_example
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+#+end_example
 
 OK great, when git is happy, everyone is happy!
 
@@ -90,7 +91,9 @@ echo -n '<<hello()>>' | git hash-object --stdin -w
 #+END_SRC
 
 #+RESULTS: hashobject
-: 7435a4d4bbd4c88971f2b1929491abd8ca9da3bb
+#+begin_example
+05d5390cf537efeab95b0e80c987b83fc855bca0
+#+end_example
 
 So we've asked git to hash the content we passed in via STDIN and we've also
 asked it to store it in the object database. It returned a 40 character SHA1 hash
@@ -107,24 +110,22 @@ tree .git
 #+END_SRC
 
 #+RESULTS:
-: .git
-: ├── HEAD
-: ├── objects
-: │   └── 74
-: │       └── 35a4d4bbd4c88971f2b1929491abd8ca9da3bb
-: └── refs
-:     └── heads
-:
-: 4 directories, 2 files
+#+begin_example
+.git
+├── HEAD
+├── objects
+│   └── 05
+│       └── d5390cf537efeab95b0e80c987b83fc855bca0
+└── refs
+    └── heads
+
+4 directories, 2 files
+#+end_example
 
 Because file systems get angry with you when you stash too many files in the same
 directory, git shards the directory based on the first two bytes of the hash.
 
-* TODO Can we just look at the object?
-** NOTE:
-   Every SRC block works up to this point. I think the problem is the expression itself; I read something about a EOF placed wrongly with a quick search. Look up into it.
-
-** body
+* Can we just look at the object?
 Let's see if we can find part of the string we hashed inside the object.
 
 #+BEGIN_SRC shell
@@ -132,6 +133,9 @@ grep -F <<first_word(line=hello())>> <<hash_to_dir(line=hashobject)>> || echo No
 #+END_SRC
 
 #+RESULTS:
+#+begin_example
+Nope.
+#+end_example
 
 Nope. Git stores the objects in compressed format, but we can use =git cat-file=
 to take a peek inside it. We'll run it with the =-p= argument to pretty-print the
@@ -144,6 +148,9 @@ git cat-file -p <<short_hash(line=hashobject)>>
 #+END_SRC
 
 #+RESULTS: myhello
+#+begin_example
+Welcome to SeaGL 2019!
+#+end_example
 
 * Let's do it ourselves
 OK, let's figure out how git compresses the file.
@@ -241,6 +248,9 @@ git cat-file -p <<short_hash(line=hashobject)>>
 #+END_SRC
 
 #+RESULTS:
+#+begin_example
+Welcome to SeaGL 2019!
+#+end_example
 
 * Final thoughts
 In a future post, I'll show how we can use similar techniques to craft

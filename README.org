@@ -1,0 +1,4 @@
+* Consistent Technical Documents Using Emacs and Org Mode
+In this repository you'll find an idealized version of the source materials for
+the [[https://osem.seagl.org/conferences/seagl2019/program/proposals/664][talk I gave for SeaGL 2019]]. I say /idealized/ because it's likely the demo I
+give at SeaGL won't be nearly this nice.
